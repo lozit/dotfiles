@@ -1,0 +1,13 @@
+[user]
+	name = Guillaume Ferrari
+	# Pas d'adresse ici (dépôt public). Git refuse de committer
+	# plutôt que d'en deviner une si aucune n'est définie.
+	useConfigOnly = true
+
+[core]
+	hooksPath = ~/Library/Application Support/ggshield/git-hooks
+
+# Adresse e-mail, propre à chaque machine, NON versionnée :
+#   ~/.gitconfig.local  →  [user] email = ...
+[include]
+	path = ~/.gitconfig.local

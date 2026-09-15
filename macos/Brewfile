@@ -1,0 +1,197 @@
+tap "dart-lang/dart"
+tap "data-wise/tap", trusted: true
+tap "felixkratz/formulae", "https://github.com/FelixKratz/homebrew-formulae", trusted: true
+tap "gitguardian/tap"
+tap "lozit/tap"
+tap "mcpjungle/mcpjungle"
+tap "nikitabobko/tap"
+tap "sass/sass"
+tap "supabase/tap"
+# Simple, modern, secure file encryption
+brew "age"
+# Codec library for encoding and decoding AV1 video streams
+brew "aom"
+# Official Amazon AWS command-line interface
+brew "awscli"
+# Cloudflare Tunnel client (formerly Argo Tunnel)
+brew "cloudflared"
+# Cross-platform make
+brew "cmake"
+# New file format for still image compression
+brew "jpeg-xl"
+# Library for encoding and decoding .avif files
+brew "libavif"
+# General-purpose scripting language
+brew "php"
+# Dependency Manager for PHP
+brew "composer"
+# Command-line tool for getting & setting the default browser
+brew "defaultbrowser"
+# Play, record, convert, and stream select audio and video codecs
+brew "ffmpeg"
+# Scanner for secrets and sensitive data in code
+brew "ggshield"
+# GitHub command-line tool
+brew "gh"
+# Quickly rewrite git repository history
+brew "git-filter-repo"
+# Open-source GitLab command-line tool
+brew "glab"
+# Deliver Go binaries as fast and easily as possible
+brew "goreleaser"
+# CLI email client written in Rust
+brew "himalaya"
+# Website copier/offline browser
+brew "httrack"
+# Configurable static site generator
+brew "hugo"
+# Migrate or backup IMAP mail accounts
+brew "imapsync"
+# Provides library functionality for FIDO U2F & FIDO 2.0, including USB
+brew "libfido2"
+# Mac App Store command-line interface
+brew "mas"
+# Publisher CLI tool for the Official Model Context Protocol (MCP) Registry
+brew "mcp-publisher"
+# Open-source, cross-platform JavaScript runtime environment
+brew "node"
+# PNG image optimizing utility
+brew "pngquant"
+# PDF rendering library (based on the xpdf-3.0 code base)
+brew "poppler"
+# Cross-platform library for audio I/O
+brew "portaudio"
+# Object-relational database system
+brew "postgresql@17", link: true
+# Ruby version manager
+brew "rbenv"
+# CLI proxy to minimize LLM token consumption
+brew "rtk"
+# Organize software neatly under a single directory tree (e.g. /usr/local)
+brew "stow"
+# Version control system designed to be a better CVS
+brew "subversion"
+# Postgres development platform
+brew "supabase"
+# Feature-rich command-line audio/video downloader
+brew "yt-dlp"
+# UNIX shell (command interpreter)
+brew "zsh"
+# Fish-like fast/unobtrusive autosuggestions for zsh
+brew "zsh-autosuggestions"
+# Additional completion definitions for zsh
+brew "zsh-completions"
+# Privacy-first email MCP server and Claude Code plugin wrapping himalaya CLI
+brew "data-wise/tap/himalaya-mcp"
+# Custom macOS statusbar with shell plugin, interaction and graph support
+brew "felixkratz/formulae/sketchybar", trusted: true
+# Self-hosted MCP tool registry for enterprise AI agents
+brew "mcpjungle/mcpjungle/mcpjungle", trusted: true
+# Password manager that keeps all passwords secure behind one password
+cask "1password"
+# AeroSpace is an i3-like tiling window manager for macOS
+cask "nikitabobko/tap/aerospace", trusted: true
+# Image editing and design software
+cask "affinity"
+# OpenAI's official ChatGPT desktop app
+cask "chatgpt"
+# Anthropic's official Claude AI desktop app
+cask "claude"
+# Tool to remove unnecessary files and folders from disk
+cask "cleanmymac"
+# Screen capturing tool
+cask "cleanshot"
+# AI-powered translator
+cask "deepl"
+# Voice and text chat software
+cask "discord"
+# Drivers for DisplayLink docks, adapters and monitors
+cask "displaylink"
+# App to build and share containerised applications and microservices
+cask "docker-desktop"
+# Web browser
+cask "firefox"
+# Web browser
+cask "firefox@developer-edition"
+cask "font-sf-mono"
+cask "font-sf-pro"
+# Terminal emulator that uses platform-native UI and GPU acceleration
+cask "ghostty"
+# Web browser
+cask "google-chrome"
+# Host-based application firewall
+cask "little-snitch"
+# Open-source cross-platform alternative to AirDrop
+cask "localsend"
+# Make a local stdio MCP server reachable from a remote agent
+cask "lozit/tap/mcp-remote-bridge", trusted: true
+# Calendar for professionals and teams
+cask "notion-calendar"
+# Knowledge base that works on top of a local folder of plain text Markdown files
+cask "obsidian"
+# Get up and running with large language models locally
+cask "ollama-app"
+# AI coding agent desktop client
+cask "opencode-desktop"
+# Client program for the OpenVPN Access Server
+cask "openvpn-connect"
+# Collaboration platform for API development
+cask "postman"
+# VPN client focusing on security
+cask "protonvpn"
+# Archive manager for data compression and backups
+cask "rar"
+# Control your tools with a few keystrokes
+cask "raycast"
+# Web browser
+cask "safari-technology-preview"
+# CLI tools for Salesforce
+cask "salesforce-cli"
+# Team communication and collaboration software
+cask "slack"
+# Free, open-source, and completely encrypted notes app
+cask "standard-notes"
+# Text editor for code, markup and prose
+cask "sublime-text"
+# Store, share and access files from anywhere
+cask "sync"
+# Real time file synchronisation software
+cask "syncthing-app"
+# Minimal GUI for AI code agents
+cask "t3-code"
+# Messaging app with a focus on speed and security
+cask "telegram"
+# Music streaming service with high fidelity sound and hi-def video quality
+cask "tidal"
+# File transfer application
+cask "transmit"
+# Multimedia player
+cask "vlc"
+# Voice-to-text dictation with AI-powered auto-editing
+cask "wispr-flow"
+# Multiplayer code editor
+cask "zed"
+# Video communication and virtual meeting platform
+cask "zoom"
+mas "1Password for Safari", id: 1569813296
+mas "Actions", id: 1586435171
+mas "Amphetamine", id: 937984704
+mas "CleanMyKeyboard", id: 6468120888
+mas "Developer", id: 640199958
+mas "InYourFace", id: 1476964367
+mas "Keynote", id: 409183694
+mas "Kindle", id: 302584613
+mas "Numbers", id: 409203825
+mas "Pages", id: 361309726
+mas "Windows App", id: 1295203466
+mas "Xcode", id: 497799835
+uv "crawl4ai"
+uv "fonttools[woff]"
+uv "mcp-proxy"
+uv "voice-mode"
+npm "@agentskill.sh/cli"
+npm "@higgsfield/cli"
+npm "codeburn"
+npm "corepack"
+npm "mcp-standardnotes"
+npm "netlify-cli"

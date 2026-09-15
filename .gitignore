@@ -1,0 +1,8 @@
+.DS_Store
+# Binaire compilé localement (voir macos/sketchybar/.config/sketchybar/helpers)
+macos/sketchybar/.config/sketchybar/helpers/next_event
+# Jamais de secrets ni de config locale
+*.local
+**/secrets.sh
+**/secrets.env
+.env
