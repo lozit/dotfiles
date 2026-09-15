@@ -6,3 +6,4 @@ macos/sketchybar/.config/sketchybar/helpers/next_event
 **/secrets.sh
 **/secrets.env
 .env
+.probe

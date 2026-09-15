@@ -70,5 +70,7 @@ if [[ $OS_DIR == macos && -z $DRY ]]; then
   command -v sketchybar >/dev/null && sketchybar --reload || true
 fi
 
+command -v bat >/dev/null && [[ -z $DRY ]] && bat cache --build >/dev/null && echo "→ cache des thèmes bat reconstruit"
+
 [[ -d "$BACKUP" ]] && echo "Anciennes versions sauvegardées dans $BACKUP"
 echo "Terminé."

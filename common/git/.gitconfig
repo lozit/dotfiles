@@ -11,3 +11,28 @@
 #   ~/.gitconfig.local  →  [user] email = ...
 [include]
 	path = ~/.gitconfig.local
+
+# ── delta : diffs lisibles (thème Catppuccin Mocha) ─────────
+[include]
+	path = ~/.config/git/catppuccin-delta.gitconfig
+[core]
+	pager = delta
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	features = catppuccin-mocha
+	navigate = true        # n / N pour passer d'un fichier à l'autre
+	line-numbers = true
+	side-by-side = false
+[merge]
+	conflictStyle = zdiff3
+[diff]
+	colorMoved = default
+[init]
+	defaultBranch = main
+[pull]
+	rebase = true
+[push]
+	autoSetupRemote = true
+[rerere]
+	enabled = true
