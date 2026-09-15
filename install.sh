@@ -34,6 +34,8 @@ stow_dir() {
     while IFS= read -r -d '' f; do
       rel="${f#"$DOTFILES/$dir/$pkg/"}"
       target="$HOME/$rel"
+      # Déjà relié (y compris via un dossier replié par Stow) : ne rien toucher
+      [[ "$target" -ef "$f" ]] && continue
       if [[ -e "$target" && ! -L "$target" ]]; then
         echo "  sauvegarde : ~/$rel"
         if [[ -z $DRY ]]; then
