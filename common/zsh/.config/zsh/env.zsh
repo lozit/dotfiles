@@ -24,3 +24,7 @@ export BUN_INSTALL="$HOME/.bun"
 if [[ $OSTYPE == linux* ]] && ! command -v zed >/dev/null && command -v zeditor >/dev/null; then
   export EDITOR="zeditor --wait" VISUAL="zeditor --wait"
 fi
+
+# pnpm : commandes globales
+export PNPM_HOME="$XDG_DATA_HOME/pnpm"
+path=("$PNPM_HOME/bin" "$PNPM_HOME" $path)
