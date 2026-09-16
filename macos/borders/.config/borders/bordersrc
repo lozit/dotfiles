@@ -1,0 +1,11 @@
+#!/bin/bash
+# JankyBorders — bordure autour de la fenêtre active (Catppuccin Mocha)
+# Recharger : brew services restart borders
+options=(
+  style=round
+  width=5.0
+  hidpi=on
+  active_color=0xffcba6f7    # mauve
+  inactive_color=0x00000000  # invisible
+)
+borders "${options[@]}"

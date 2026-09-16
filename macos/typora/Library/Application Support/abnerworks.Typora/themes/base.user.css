@@ -1,0 +1,8 @@
+/* Typora — s'applique à tous les thèmes
+   Texte en iA Writer Duo, code en JetBrains Mono */
+#write {
+  font-family: "iA Writer Duo S", -apple-system, sans-serif;
+}
+#write pre, #write code, #write tt, .md-fences, .CodeMirror {
+  font-family: "JetBrainsMono Nerd Font", ui-monospace, monospace;
+}

@@ -1,0 +1,20 @@
+{
+  "title": "Touche Hyper (dotfiles)",
+  "rules": [
+    {
+      "description": "Caps Lock : maintenu = Hyper (⌃⌥⇧⌘), appui court = Caps Lock",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": { "key_code": "caps_lock", "modifiers": { "optional": ["any"] } },
+          "to": [
+            { "key_code": "left_shift", "modifiers": ["left_command", "left_control", "left_option"] }
+          ],
+          "to_if_alone": [
+            { "key_code": "caps_lock", "hold_down_milliseconds": 100 }
+          ]
+        }
+      ]
+    }
+  ]
+}

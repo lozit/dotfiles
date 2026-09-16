@@ -87,6 +87,8 @@ brew "mise"
 brew "neovim"
 # Open-source, cross-platform JavaScript runtime environment
 brew "node"
+# PAM module for reattaching to the user's GUI (Aqua) session
+brew "pam-reattach"
 # PNG image optimizing utility
 brew "pngquant"
 # PDF rendering library (based on the xpdf-3.0 code base)
@@ -113,6 +115,8 @@ brew "tesseract"
 brew "tlrc"
 # Terminal multiplexer
 brew "tmux"
+# Upgrade all the things
+brew "topgrade"
 # Quickly manage and navigate project directories for experiments
 brew "try"
 # Feature-rich command-line audio/video downloader
@@ -125,6 +129,8 @@ brew "zsh"
 brew "zsh-autosuggestions"
 # Additional completion definitions for zsh
 brew "zsh-completions"
+# A window border system for macOS
+brew "felixkratz/formulae/borders", trusted: true
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
 # Command-line interface for 1Password
@@ -161,6 +167,8 @@ cask "font-sf-pro"
 cask "ghostty"
 # Web browser
 cask "google-chrome"
+# Keyboard customiser
+cask "karabiner-elements"
 # Host-based application firewall
 cask "little-snitch"
 # Open-source cross-platform alternative to AirDrop
@@ -176,10 +184,14 @@ cask "ollama-app"
 cask "opencode-desktop"
 # Client program for the OpenVPN Access Server
 cask "openvpn-connect"
+# Replacement for Docker Desktop
+cask "orbstack"
 # Collaboration platform for API development
 cask "postman"
 # VPN client focusing on security
 cask "protonvpn"
+# Quick Look generator for Markdown files
+cask "qlmarkdown"
 # Archive manager for data compression and backups
 cask "rar"
 # Control your tools with a few keystrokes
@@ -198,6 +210,8 @@ cask "sublime-text"
 cask "sync"
 # Real time file synchronisation software
 cask "syncthing-app"
+# Quicklook extension for source files
+cask "syntax-highlight"
 # Minimal GUI for AI code agents
 cask "t3-code"
 # Messaging app with a focus on speed and security

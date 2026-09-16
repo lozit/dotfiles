@@ -13,7 +13,8 @@ background-opacity = 0.96
 background-blur = 20
 
 macos-titlebar-style = tabs
-macos-option-as-alt = true        # Option+← / Option+→ pour sauter des mots
+# Option+← / Option+→ pour sauter des mots
+macos-option-as-alt = true
 cursor-style = bar
 cursor-style-blink = false
 mouse-hide-while-typing = true

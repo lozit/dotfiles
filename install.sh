@@ -36,6 +36,9 @@ stow_dir() {
       target="$HOME/$rel"
       # Déjà relié (y compris via un dossier replié par Stow) : ne rien toucher
       [[ "$target" -ef "$f" ]] && continue
+      # Créer les dossiers parents manquants : Stow relie alors fichier par fichier,
+      # et une app (Typora, btop…) ne peut pas écrire ses propres fichiers dans le dépôt
+      [[ -z $DRY && ! -e "$(dirname "$target")" ]] && mkdir -p "$(dirname "$target")"
       if [[ -e "$target" && ! -L "$target" ]]; then
         echo "  sauvegarde : ~/$rel"
         if [[ -z $DRY ]]; then

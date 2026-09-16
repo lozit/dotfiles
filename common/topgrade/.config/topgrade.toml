@@ -1,0 +1,14 @@
+# topgrade — tout mettre à jour en une commande : `topgrade`
+# Toutes les options : https://github.com/topgrade-rs/topgrade/blob/main/config.example.toml
+
+[misc]
+# Étapes à ne pas lancer :
+#  - containers : mettrait à jour toutes les images Docker locales
+#  - system     : mises à jour macOS (à faire depuis les Réglages)
+disable = ["containers", "system"]
+# Nettoyer les anciennes versions (brew cleanup…) après la mise à jour
+cleanup = true
+
+[brew]
+# Laisser les apps qui se mettent à jour seules (Chrome, Slack…) gérer leurs mises à jour
+greedy_cask = false
