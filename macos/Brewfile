@@ -1,11 +1,7 @@
-tap "dart-lang/dart"
 tap "data-wise/tap"
-tap "felixkratz/formulae", "https://github.com/FelixKratz/homebrew-formulae"
-tap "gitguardian/tap"
-tap "lozit/tap"
-tap "nikitabobko/tap"
-tap "sass/sass"
-tap "supabase/tap"
+tap "felixkratz/formulae", "https://github.com/FelixKratz/homebrew-formulae", trusted: true
+tap "lozit/tap", trusted: true
+tap "nikitabobko/tap", trusted: true
 # Simple, modern, secure file encryption
 brew "age"
 # Codec library for encoding and decoding AV1 video streams
@@ -30,6 +26,8 @@ brew "libavif"
 brew "php"
 # Dependency Manager for PHP
 brew "composer"
+# Reference implementation of Sass, written in Dart
+brew "dart-sass"
 # Command-line tool for getting & setting the default browser
 brew "defaultbrowser"
 # More intuitive version of du in rust
@@ -100,6 +98,8 @@ brew "postgresql@17", link: true
 brew "ripgrep"
 # CLI proxy to minimize LLM token consumption
 brew "rtk"
+# 7-Zip is a file archiver with a high compression ratio
+brew "sevenzip"
 # Cross-shell prompt for astronauts
 brew "starship"
 # Organize software neatly under a single directory tree (e.g. /usr/local)
@@ -128,13 +128,18 @@ brew "zsh"
 brew "zsh-autosuggestions"
 # Additional completion definitions for zsh
 brew "zsh-completions"
+# Privacy-first email MCP server and Claude Code plugin wrapping himalaya CLI
+brew "data-wise/tap/himalaya-mcp", trusted: true
 # A window border system for macOS
 brew "felixkratz/formulae/borders", trusted: true
+# Custom macOS statusbar with shell plugin, interaction and graph support
+brew "felixkratz/formulae/sketchybar"
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
 # Command-line interface for 1Password
 cask "1password-cli"
-cask "aerospace"
+# AeroSpace is an i3-like tiling window manager for macOS
+cask "nikitabobko/tap/aerospace"
 # Image editing and design software
 cask "affinity"
 # OpenAI's official ChatGPT desktop app
@@ -168,11 +173,14 @@ cask "ghostty"
 cask "google-chrome"
 # Keyboard customiser
 cask "karabiner-elements"
+# File archiver
+cask "keka"
 # Host-based application firewall
 cask "little-snitch"
 # Open-source cross-platform alternative to AirDrop
 cask "localsend"
-cask "mcp-remote-bridge"
+# Make a local stdio MCP server reachable from a remote agent
+cask "lozit/tap/mcp-remote-bridge"
 # Calendar for professionals and teams
 cask "notion-calendar"
 # Knowledge base that works on top of a local folder of plain text Markdown files
@@ -191,14 +199,10 @@ cask "postman"
 cask "protonvpn"
 # Quick Look generator for Markdown files
 cask "qlmarkdown"
-# Archive manager for data compression and backups
-cask "rar"
 # Control your tools with a few keystrokes
 cask "raycast"
 # Web browser
 cask "safari-technology-preview"
-# CLI tools for Salesforce
-cask "salesforce-cli"
 # Team communication and collaboration software
 cask "slack"
 # Free, open-source, and completely encrypted notes app
@@ -247,6 +251,7 @@ uv "mcp-proxy"
 uv "voice-mode"
 npm "@agentskill.sh/cli"
 npm "@higgsfield/cli"
+npm "@salesforce/cli"
 npm "codeburn"
 npm "corepack"
 npm "mcp-standardnotes"
