@@ -1,17 +1,23 @@
 {
-  "title": "Touche Hyper (dotfiles)",
+  "title": "Super sur Caps Lock",
   "rules": [
     {
-      "description": "Caps Lock : maintenu = Hyper (⌃⌥⇧⌘), appui court = Caps Lock",
+      "description": "Caps Lock : maintenu = Super (⌃⌥⌘, Maj reste libre), appui court = Caps Lock",
       "manipulators": [
         {
           "type": "basic",
-          "from": { "key_code": "caps_lock", "modifiers": { "optional": ["any"] } },
+          "from": {
+            "key_code": "caps_lock",
+            "modifiers": { "optional": ["any"] }
+          },
           "to": [
-            { "key_code": "left_shift", "modifiers": ["left_command", "left_control", "left_option"] }
+            {
+              "key_code": "left_command",
+              "modifiers": ["left_control", "left_option"]
+            }
           ],
           "to_if_alone": [
-            { "key_code": "caps_lock", "hold_down_milliseconds": 100 }
+            { "key_code": "caps_lock", "hold_down_milliseconds": 250 }
           ]
         }
       ]

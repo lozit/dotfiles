@@ -1,13 +1,15 @@
 # ─────────────────────────────────────────────────────────────
-#  AeroSpace — gestionnaire de fenêtres en mosaïque (Guillaume)
+#  AeroSpace — raccourcis façon Omarchy (Guillaume)
 #  Emplacement : ~/.config/aerospace/aerospace.toml
 #  Doc         : https://nikitabobko.github.io/AeroSpace/guide
-#  Recharger   : Hyper + C
+#  Recharger   : Super + Maj + R
 #
-#  Hyper = Caps Lock maintenu = ⌘⌥⌃⇧ (règle Karabiner)
-#  Les touches désignent des positions PHYSIQUES (clavier QWERTY).
-#  Sur AZERTY, ces touches tombent au même endroit :
-#  rangée des chiffres, s d f g h j k l, r t, x c b n.
+#  Super = Caps Lock maintenu = ⌘⌥⌃ (Karabiner) → cmd-alt-ctrl
+#  Super + Maj                                   → cmd-alt-ctrl-shift
+#
+#  Les noms de touches sont ceux du clavier QWERTY (positions physiques).
+#  Sur AZERTY : la touche W s'appelle « z », les touches ) et - à droite
+#  du 0 s'appellent « minus » et « equal ».
 # ─────────────────────────────────────────────────────────────
 
 config-version = 2
@@ -29,11 +31,10 @@ exec-on-workspace-change = [
 enable-normalization-flatten-containers = true
 enable-normalization-opposite-orientation-for-nested-containers = true
 
-accordion-padding = 30
+accordion-padding = 0
 default-root-container-layout = 'tiles'
 default-root-container-orientation = 'auto'
 
-# La souris suit le focus quand on change d'écran
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
 automatically-unhide-macos-hidden-apps = false
@@ -41,83 +42,89 @@ automatically-unhide-macos-hidden-apps = false
 [key-mapping]
 preset = 'qwerty'
 
-# Marges : outer.top = hauteur de SketchyBar (32) + 8
 [gaps]
-inner.horizontal = 8
-inner.vertical   = 8
-outer.left       = 8
-outer.right      = 8
-outer.bottom     = 8
-outer.top        = 40
+inner.horizontal = 6
+inner.vertical   = 6
+outer.left       = 3
+outer.right      = 3
+outer.bottom     = 3
+outer.top        = 5
 
-# ── Mode normal ──────────────────────────────────────────────
 [mode.main.binding]
-# Aller à l'espace 1 à 9
-cmd-alt-ctrl-shift-1 = 'workspace 1'
-cmd-alt-ctrl-shift-2 = 'workspace 2'
-cmd-alt-ctrl-shift-3 = 'workspace 3'
-cmd-alt-ctrl-shift-4 = 'workspace 4'
-cmd-alt-ctrl-shift-5 = 'workspace 5'
-cmd-alt-ctrl-shift-6 = 'workspace 6'
-cmd-alt-ctrl-shift-7 = 'workspace 7'
-cmd-alt-ctrl-shift-8 = 'workspace 8'
-cmd-alt-ctrl-shift-9 = 'workspace 9'
-# Revenir à l'espace précédent
-cmd-alt-ctrl-shift-tab = 'workspace-back-and-forth'
+# ── Espaces ──────────────────────────────────────────────────
+# Super + 1…9 : aller à l'espace
+cmd-alt-ctrl-1 = 'workspace 1'
+cmd-alt-ctrl-2 = 'workspace 2'
+cmd-alt-ctrl-3 = 'workspace 3'
+cmd-alt-ctrl-4 = 'workspace 4'
+cmd-alt-ctrl-5 = 'workspace 5'
+cmd-alt-ctrl-6 = 'workspace 6'
+cmd-alt-ctrl-7 = 'workspace 7'
+cmd-alt-ctrl-8 = 'workspace 8'
+cmd-alt-ctrl-9 = 'workspace 9'
 
-# Focus façon vim
-cmd-alt-ctrl-shift-h = 'focus left'
-cmd-alt-ctrl-shift-j = 'focus down'
-cmd-alt-ctrl-shift-k = 'focus up'
-cmd-alt-ctrl-shift-l = 'focus right'
+# Super + Maj + 1…9 : envoyer la fenêtre vers l'espace (et la suivre)
+cmd-alt-ctrl-shift-1 = 'move-node-to-workspace --focus-follows-window 1'
+cmd-alt-ctrl-shift-2 = 'move-node-to-workspace --focus-follows-window 2'
+cmd-alt-ctrl-shift-3 = 'move-node-to-workspace --focus-follows-window 3'
+cmd-alt-ctrl-shift-4 = 'move-node-to-workspace --focus-follows-window 4'
+cmd-alt-ctrl-shift-5 = 'move-node-to-workspace --focus-follows-window 5'
+cmd-alt-ctrl-shift-6 = 'move-node-to-workspace --focus-follows-window 6'
+cmd-alt-ctrl-shift-7 = 'move-node-to-workspace --focus-follows-window 7'
+cmd-alt-ctrl-shift-8 = 'move-node-to-workspace --focus-follows-window 8'
+cmd-alt-ctrl-shift-9 = 'move-node-to-workspace --focus-follows-window 9'
 
-# Disposition
-# s = mosaïque (bascule horizontal/vertical), x = accordéon
-cmd-alt-ctrl-shift-s = 'layout tiles horizontal vertical'
-cmd-alt-ctrl-shift-x = 'layout accordion horizontal vertical'
-# f = plein écran (dans AeroSpace), t = flottant/mosaïque
-cmd-alt-ctrl-shift-f = 'fullscreen'
-cmd-alt-ctrl-shift-t = 'layout floating tiling'
+# Super + Tab / Super + Maj + Tab : espace suivant / précédent
+cmd-alt-ctrl-tab       = 'workspace --wrap-around next'
+cmd-alt-ctrl-shift-tab = 'workspace --wrap-around prev'
 
-# Modes
-# d = déplacer, r = redimensionner, c = recharger la config
-cmd-alt-ctrl-shift-d = 'mode deplacer'
-cmd-alt-ctrl-shift-r = 'mode resize'
-cmd-alt-ctrl-shift-c = 'reload-config'
+# ── Fenêtres ─────────────────────────────────────────────────
+# Super + flèches : focus
+cmd-alt-ctrl-left  = 'focus left'
+cmd-alt-ctrl-down  = 'focus down'
+cmd-alt-ctrl-up    = 'focus up'
+cmd-alt-ctrl-right = 'focus right'
 
-# ── Mode « déplacer » (Hyper + D, puis une touche) ───────────
-[mode.deplacer.binding]
-esc   = 'mode main'
-enter = 'mode main'
-# Déplacer la fenêtre dans l'espace courant (on reste dans le mode)
-h = 'move left'
-j = 'move down'
-k = 'move up'
-l = 'move right'
-# Envoyer la fenêtre vers l'espace N (et revenir au mode normal)
-1 = ['move-node-to-workspace 1', 'mode main']
-2 = ['move-node-to-workspace 2', 'mode main']
-3 = ['move-node-to-workspace 3', 'mode main']
-4 = ['move-node-to-workspace 4', 'mode main']
-5 = ['move-node-to-workspace 5', 'mode main']
-6 = ['move-node-to-workspace 6', 'mode main']
-7 = ['move-node-to-workspace 7', 'mode main']
-8 = ['move-node-to-workspace 8', 'mode main']
-9 = ['move-node-to-workspace 9', 'mode main']
-# n = envoyer vers l'écran suivant
-n = ['move-node-to-monitor --wrap-around next', 'mode main']
-# b = remettre l'espace à plat si la mosaïque devient confuse
-b = ['flatten-workspace-tree', 'mode main']
+# Super + Maj + flèches : échanger les fenêtres
+cmd-alt-ctrl-shift-left  = 'move left'
+cmd-alt-ctrl-shift-down  = 'move down'
+cmd-alt-ctrl-shift-up    = 'move up'
+cmd-alt-ctrl-shift-right = 'move right'
 
-# ── Mode « redimensionner » (Hyper + R) ──────────────────────
-[mode.resize.binding]
-h = 'resize width -50'
-l = 'resize width +50'
-j = 'resize height +50'
-k = 'resize height -50'
-b = 'balance-sizes'
-esc   = 'mode main'
-enter = 'mode main'
+# Super + W (touche « z » en QWERTY) : fermer la fenêtre
+cmd-alt-ctrl-z = 'close'
+# Super + J : basculer la division horizontale / verticale
+cmd-alt-ctrl-j = 'layout tiles horizontal vertical'
+# Super + L : basculer mosaïque / accordéon
+cmd-alt-ctrl-l = 'layout tiles accordion'
+# Super + T : flottant / mosaïque
+cmd-alt-ctrl-t = 'layout floating tiling'
+# Super + F : plein écran
+cmd-alt-ctrl-f = 'fullscreen'
+
+# Super + ) / Super + - (à droite du 0) : réduire / agrandir
+cmd-alt-ctrl-minus = 'resize smart -50'
+cmd-alt-ctrl-equal = 'resize smart +50'
+
+# ── Applications ─────────────────────────────────────────────
+# Super + Entrée : terminal
+cmd-alt-ctrl-enter = 'exec-and-forget open -na Ghostty'
+# Super + Maj + Entrée : navigateur (nouvelle fenêtre)
+cmd-alt-ctrl-shift-enter = 'exec-and-forget open -na "Firefox Developer Edition" --args --new-window'
+# Super + Maj + F : Finder
+cmd-alt-ctrl-shift-f = 'exec-and-forget open ~'
+# Super + Maj + N : éditeur
+cmd-alt-ctrl-shift-n = 'exec-and-forget open -a Zed'
+# Super + Maj + O : Obsidian
+cmd-alt-ctrl-shift-o = 'exec-and-forget open -a Obsidian'
+# Super + Maj + W (touche « z » en QWERTY) : Typora
+cmd-alt-ctrl-shift-z = 'exec-and-forget open -a Typora'
+# Super + Maj + D : lazydocker
+cmd-alt-ctrl-shift-d = 'exec-and-forget open -na Ghostty --args -e /opt/homebrew/bin/lazydocker'
+
+# ── AeroSpace ────────────────────────────────────────────────
+# Super + Maj + R : recharger la config
+cmd-alt-ctrl-shift-r = 'reload-config'
 
 # ── Fenêtres toujours flottantes ─────────────────────────────
 # Identifiant d'une app : aerospace list-apps
