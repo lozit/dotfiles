@@ -5,13 +5,16 @@
 # Étapes à ne pas lancer :
 #  - containers : mettrait à jour toutes les images Docker locales
 #  - system     : mises à jour macOS (à faire depuis les Réglages)
-disable = ["containers", "system"]
+disable = ["containers", "system", "gem", "ruby_gems", "composer", "bun", "claude_code_plugins"]
 # Nettoyer les anciennes versions (brew cleanup…) après la mise à jour
 cleanup = true
 
 [brew]
 # Laisser les apps qui se mettent à jour seules (Chrome, Slack…) gérer leurs mises à jour
 greedy_cask = false
+
+[git]
+arguments = "--rebase --autostash"
 
 [commands]
 # « -i » : shell interactif, pour charger la fonction depuis la config zsh
