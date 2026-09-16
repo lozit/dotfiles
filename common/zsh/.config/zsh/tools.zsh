@@ -40,5 +40,10 @@ fi
 # bun
 [[ -s $HOME/.bun/_bun ]] && source "$HOME/.bun/_bun"
 
+# try : dossiers d'expériences datés (chargé au premier appel)
+if _has try; then
+  try() { unfunction try; eval "$(command try init ~/Projets/tries)"; try "$@"; }
+fi
+
 # Prompt Starship (en dernier)
 _has starship && eval "$(starship init zsh)"

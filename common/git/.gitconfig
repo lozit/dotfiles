@@ -27,7 +27,9 @@
 [merge]
 	conflictStyle = zdiff3
 [diff]
+	algorithm = histogram    # diffs plus clairs sur les lignes déplacées
 	colorMoved = default
+	mnemonicPrefix = true
 [init]
 	defaultBranch = main
 [pull]
@@ -36,3 +38,19 @@
 	autoSetupRemote = true
 [rerere]
 	enabled = true
+	autoupdate = true
+
+# ── Repris d'Omarchy (config/git/config) ────────────────────
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+[commit]
+	verbose = true           # affiche le diff dans l'éditeur du message
+[column]
+	ui = auto
+[branch]
+	sort = -committerdate    # branches les plus récentes en premier
+[tag]
+	sort = -version:refname

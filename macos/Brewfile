@@ -17,6 +17,8 @@ brew "atuin"
 brew "awscli"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
+# Resource monitor. C++ version and continuation of bashtop and bpytop
+brew "btop"
 # Cloudflare Tunnel client (formerly Argo Tunnel)
 brew "cloudflared"
 # Cross-platform make
@@ -31,8 +33,12 @@ brew "php"
 brew "composer"
 # Command-line tool for getting & setting the default browser
 brew "defaultbrowser"
+# More intuitive version of du in rust
+brew "dust"
 # Modern, maintained replacement for ls
 brew "eza"
+# Like neofetch, but much faster because written mostly in C
+brew "fastfetch"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
 # Play, record, convert, and stream select audio and video codecs
@@ -51,14 +57,22 @@ brew "git-filter-repo"
 brew "glab"
 # Deliver Go binaries as fast and easily as possible
 brew "goreleaser"
+# Tool for glamorous shell scripts
+brew "gum"
 # CLI email client written in Rust
 brew "himalaya"
 # Website copier/offline browser
 brew "httrack"
 # Configurable static site generator
 brew "hugo"
+# Tools and libraries to manipulate images in select formats
+brew "imagemagick"
 # Migrate or backup IMAP mail accounts
 brew "imapsync"
+# Lightweight and flexible command-line JSON processor
+brew "jq"
+# Lazier way to manage everything docker
+brew "lazydocker"
 # Simple terminal UI for git commands
 brew "lazygit"
 # Provides library functionality for FIDO U2F & FIDO 2.0, including USB
@@ -69,6 +83,8 @@ brew "mas"
 brew "mcp-publisher"
 # Polyglot runtime manager (asdf rust clone)
 brew "mise"
+# Ambitious Vim-fork focused on extensibility and agility
+brew "neovim"
 # Open-source, cross-platform JavaScript runtime environment
 brew "node"
 # PNG image optimizing utility
@@ -91,6 +107,14 @@ brew "stow"
 brew "subversion"
 # Postgres development platform
 brew "supabase"
+# OCR (Optical Character Recognition) engine
+brew "tesseract"
+# Official tldr client written in Rust
+brew "tlrc"
+# Terminal multiplexer
+brew "tmux"
+# Quickly manage and navigate project directories for experiments
+brew "try"
 # Feature-rich command-line audio/video downloader
 brew "yt-dlp"
 # Shell extension to navigate your filesystem faster
@@ -103,6 +127,8 @@ brew "zsh-autosuggestions"
 brew "zsh-completions"
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
+# Command-line interface for 1Password
+cask "1password-cli"
 cask "aerospace"
 # Image editing and design software
 cask "affinity"
@@ -126,6 +152,8 @@ cask "docker-desktop"
 cask "firefox"
 # Web browser
 cask "firefox@developer-edition"
+cask "font-ia-writer-duo"
+cask "font-ia-writer-quattro"
 cask "font-jetbrains-mono-nerd-font"
 cask "font-sf-mono"
 cask "font-sf-pro"
@@ -178,6 +206,8 @@ cask "telegram"
 cask "tidal"
 # File transfer application
 cask "transmit"
+# Configurable document editor that supports Markdown
+cask "typora"
 # Multimedia player
 cask "vlc"
 # Voice-to-text dictation with AI-powered auto-editing
