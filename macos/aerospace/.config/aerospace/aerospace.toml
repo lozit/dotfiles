@@ -37,6 +37,11 @@ default-root-container-orientation = 'auto'
 
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
+# Cmd+Tab vers une app d'un autre espace : afficher l'espace de la fenêtre
+on-focus-changed = [
+  'exec-and-forget ws=$(/opt/homebrew/bin/aerospace list-windows --focused --format "%{workspace}") && [ -n "$ws" ] && /opt/homebrew/bin/aerospace workspace "$ws"',
+]
+
 automatically-unhide-macos-hidden-apps = false
 
 [key-mapping]
