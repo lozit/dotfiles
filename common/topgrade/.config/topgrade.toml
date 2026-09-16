@@ -5,7 +5,7 @@
 # Étapes à ne pas lancer :
 #  - containers : mettrait à jour toutes les images Docker locales
 #  - system     : mises à jour macOS (à faire depuis les Réglages)
-disable = ["containers", "system", "gem", "ruby_gems", "composer", "bun", "claude_code_plugins"]
+disable = ["containers", "system", "gem", "ruby_gems", "composer", "bun", "bun_packages", "claude_code_plugins"]
 # Nettoyer les anciennes versions (brew cleanup…) après la mise à jour
 cleanup = true
 

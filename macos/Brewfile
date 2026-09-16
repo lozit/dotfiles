@@ -14,6 +14,8 @@ brew "awscli"
 brew "bat"
 # Resource monitor. C++ version and continuation of bashtop and bpytop
 brew "btop"
+# Incredibly fast JavaScript runtime, bundler, test runner, and package manager
+brew "bun"
 # Cloudflare Tunnel client (formerly Argo Tunnel)
 brew "cloudflared"
 # Cross-platform make
@@ -248,7 +250,6 @@ mas "Xcode", id: 497799835
 uv "crawl4ai"
 uv "fonttools[woff]"
 uv "mcp-proxy"
-uv "voice-mode"
 npm "@agentskill.sh/cli"
 npm "@higgsfield/cli"
 npm "@salesforce/cli"

@@ -14,11 +14,9 @@ export XDG_STATE_HOME="$HOME/.local/state"
 typeset -U path PATH
 path=(
   "$HOME/.local/bin"
-  "$HOME/.bun/bin"
   "$HOME/go/bin"
   $path
 )
-export BUN_INSTALL="$HOME/.bun"
 
 # Sur Linux (Omarchy), zed peut s'appeler zeditor
 if [[ $OSTYPE == linux* ]] && ! command -v zed >/dev/null && command -v zeditor >/dev/null; then

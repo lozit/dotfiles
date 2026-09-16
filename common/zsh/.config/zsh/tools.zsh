@@ -37,8 +37,6 @@ fi
 # Secrets depuis le trousseau macOS — voir ~/.config/shell/secrets.sh (hors dépôt)
 [[ -f $HOME/.config/shell/secrets.sh ]] && source "$HOME/.config/shell/secrets.sh"
 
-# bun
-[[ -s $HOME/.bun/_bun ]] && source "$HOME/.bun/_bun"
 
 # try : dossiers d'expériences datés (chargé au premier appel)
 if _has try; then
