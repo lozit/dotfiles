@@ -12,3 +12,7 @@ cleanup = true
 [brew]
 # Laisser les apps qui se mettent à jour seules (Chrome, Slack…) gérer leurs mises à jour
 greedy_cask = false
+
+[commands]
+# « -i » : shell interactif, pour charger la fonction depuis la config zsh
+"Plugins Claude (projets)" = "-i claude-plugin-update-all"
