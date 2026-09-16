@@ -1,0 +1,130 @@
+# ─────────────────────────────────────────────────────────────
+#  AeroSpace — gestionnaire de fenêtres en mosaïque (Guillaume)
+#  Emplacement : ~/.config/aerospace/aerospace.toml
+#  Doc         : https://nikitabobko.github.io/AeroSpace/guide
+#  Recharger   : Hyper + C
+#
+#  Hyper = Caps Lock maintenu = ⌘⌥⌃⇧ (règle Karabiner)
+#  Les touches désignent des positions PHYSIQUES (clavier QWERTY).
+#  Sur AZERTY, ces touches tombent au même endroit :
+#  rangée des chiffres, s d f g h j k l, r t, x c b n.
+# ─────────────────────────────────────────────────────────────
+
+config-version = 2
+
+# Espaces 1 à 9 toujours présents, même vides
+persistent-workspaces = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
+
+start-at-login = true
+
+# JankyBorders démarre avec AeroSpace (lit ~/.config/borders/bordersrc)
+after-startup-command = ['exec-and-forget borders']
+
+# Prévient SketchyBar à chaque changement d'espace
+exec-on-workspace-change = [
+  '/bin/bash', '-c',
+  'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE',
+]
+
+enable-normalization-flatten-containers = true
+enable-normalization-opposite-orientation-for-nested-containers = true
+
+accordion-padding = 30
+default-root-container-layout = 'tiles'
+default-root-container-orientation = 'auto'
+
+# La souris suit le focus quand on change d'écran
+on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+
+automatically-unhide-macos-hidden-apps = false
+
+[key-mapping]
+preset = 'qwerty'
+
+# Marges : outer.top = hauteur de SketchyBar (32) + 8
+[gaps]
+inner.horizontal = 8
+inner.vertical   = 8
+outer.left       = 8
+outer.right      = 8
+outer.bottom     = 8
+outer.top        = 40
+
+# ── Mode normal ──────────────────────────────────────────────
+[mode.main.binding]
+# Aller à l'espace 1 à 9
+cmd-alt-ctrl-shift-1 = 'workspace 1'
+cmd-alt-ctrl-shift-2 = 'workspace 2'
+cmd-alt-ctrl-shift-3 = 'workspace 3'
+cmd-alt-ctrl-shift-4 = 'workspace 4'
+cmd-alt-ctrl-shift-5 = 'workspace 5'
+cmd-alt-ctrl-shift-6 = 'workspace 6'
+cmd-alt-ctrl-shift-7 = 'workspace 7'
+cmd-alt-ctrl-shift-8 = 'workspace 8'
+cmd-alt-ctrl-shift-9 = 'workspace 9'
+# Revenir à l'espace précédent
+cmd-alt-ctrl-shift-tab = 'workspace-back-and-forth'
+
+# Focus façon vim
+cmd-alt-ctrl-shift-h = 'focus left'
+cmd-alt-ctrl-shift-j = 'focus down'
+cmd-alt-ctrl-shift-k = 'focus up'
+cmd-alt-ctrl-shift-l = 'focus right'
+
+# Disposition
+# s = mosaïque (bascule horizontal/vertical), x = accordéon
+cmd-alt-ctrl-shift-s = 'layout tiles horizontal vertical'
+cmd-alt-ctrl-shift-x = 'layout accordion horizontal vertical'
+# f = plein écran (dans AeroSpace), t = flottant/mosaïque
+cmd-alt-ctrl-shift-f = 'fullscreen'
+cmd-alt-ctrl-shift-t = 'layout floating tiling'
+
+# Modes
+# d = déplacer, r = redimensionner, c = recharger la config
+cmd-alt-ctrl-shift-d = 'mode deplacer'
+cmd-alt-ctrl-shift-r = 'mode resize'
+cmd-alt-ctrl-shift-c = 'reload-config'
+
+# ── Mode « déplacer » (Hyper + D, puis une touche) ───────────
+[mode.deplacer.binding]
+esc   = 'mode main'
+enter = 'mode main'
+# Déplacer la fenêtre dans l'espace courant (on reste dans le mode)
+h = 'move left'
+j = 'move down'
+k = 'move up'
+l = 'move right'
+# Envoyer la fenêtre vers l'espace N (et revenir au mode normal)
+1 = ['move-node-to-workspace 1', 'mode main']
+2 = ['move-node-to-workspace 2', 'mode main']
+3 = ['move-node-to-workspace 3', 'mode main']
+4 = ['move-node-to-workspace 4', 'mode main']
+5 = ['move-node-to-workspace 5', 'mode main']
+6 = ['move-node-to-workspace 6', 'mode main']
+7 = ['move-node-to-workspace 7', 'mode main']
+8 = ['move-node-to-workspace 8', 'mode main']
+9 = ['move-node-to-workspace 9', 'mode main']
+# n = envoyer vers l'écran suivant
+n = ['move-node-to-monitor --wrap-around next', 'mode main']
+# b = remettre l'espace à plat si la mosaïque devient confuse
+b = ['flatten-workspace-tree', 'mode main']
+
+# ── Mode « redimensionner » (Hyper + R) ──────────────────────
+[mode.resize.binding]
+h = 'resize width -50'
+l = 'resize width +50'
+j = 'resize height +50'
+k = 'resize height -50'
+b = 'balance-sizes'
+esc   = 'mode main'
+enter = 'mode main'
+
+# ── Fenêtres toujours flottantes ─────────────────────────────
+# Identifiant d'une app : aerospace list-apps
+[[on-window-detected]]
+if.app-id = 'com.apple.systempreferences'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.calculator'
+run = 'layout floating'
