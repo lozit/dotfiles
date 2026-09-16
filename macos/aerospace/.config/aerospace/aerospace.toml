@@ -15,7 +15,7 @@
 config-version = 2
 
 # Espaces 1 à 9 toujours présents, même vides
-persistent-workspaces = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
+persistent-workspaces = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
 
 start-at-login = true
 
@@ -62,6 +62,7 @@ cmd-alt-ctrl-6 = 'workspace 6'
 cmd-alt-ctrl-7 = 'workspace 7'
 cmd-alt-ctrl-8 = 'workspace 8'
 cmd-alt-ctrl-9 = 'workspace 9'
+cmd-alt-ctrl-0 = 'workspace 0'
 
 # Super + Maj + 1…9 : envoyer la fenêtre vers l'espace (et la suivre)
 cmd-alt-ctrl-shift-1 = 'move-node-to-workspace --focus-follows-window 1'
@@ -73,6 +74,7 @@ cmd-alt-ctrl-shift-6 = 'move-node-to-workspace --focus-follows-window 6'
 cmd-alt-ctrl-shift-7 = 'move-node-to-workspace --focus-follows-window 7'
 cmd-alt-ctrl-shift-8 = 'move-node-to-workspace --focus-follows-window 8'
 cmd-alt-ctrl-shift-9 = 'move-node-to-workspace --focus-follows-window 9'
+cmd-alt-ctrl-shift-0 = 'move-node-to-workspace --focus-follows-window 0'
 
 # Super + Tab / Super + Maj + Tab : espace suivant / précédent
 cmd-alt-ctrl-tab       = 'workspace --wrap-around next'
