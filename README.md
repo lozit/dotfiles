@@ -333,11 +333,39 @@ Tous les raccourcis : [lazyvim.org/keymaps](https://www.lazyvim.org/keymaps)
 
 | Touche | Action |
 |---|---|
-| **Caps Lock maintenu** | **Hyper** (`Ctrl+Option+Shift+Cmd`), à combiner avec une lettre (raccourcis Raycast, AeroSpace…) |
+| **Caps Lock maintenu** | **Super** (`Ctrl+Option+Cmd`) ; avec `Shift` : Super+Shift. Voir AeroSpace ci-dessous |
 | Caps Lock appui court | Caps Lock normal (majuscules accentuées É È À) |
 | `Espace` sur un fichier dans le Finder | Aperçu Quick Look (code coloré, Markdown rendu) |
 | `Cmd+Shift+.` dans le Finder | Afficher / masquer les fichiers cachés |
 | `Ctrl+Cmd+glisser` | Déplacer une fenêtre en la saisissant n'importe où |
+
+### AeroSpace (fenêtres)
+
+**Super** = Caps Lock maintenu (`Ctrl+Option+Cmd`, via Karabiner). Mêmes raccourcis qu'Omarchy.
+
+| Raccourci | Action |
+|---|---|
+| `Super+1…9` | Aller à l'espace 1 à 9 |
+| `Super+Shift+1…9` | Envoyer la fenêtre vers l'espace (et la suivre) |
+| `Super+Tab` / `Super+Shift+Tab` | Espace suivant / précédent |
+| `Super+flèches` | Focus sur la fenêtre voisine |
+| `Super+Shift+flèches` | Échanger deux fenêtres |
+| `Super+W` | Fermer la fenêtre |
+| `Super+J` | Division horizontale / verticale |
+| `Super+L` | Mosaïque / accordéon |
+| `Super+T` | Flottant / mosaïque |
+| `Super+F` | Plein écran |
+| `Super+)` / `Super+-` | Réduire / agrandir la fenêtre |
+| `Super+Entrée` | Terminal (Ghostty) |
+| `Super+Shift+Entrée` | Navigateur (Firefox Developer Edition) |
+| `Super+Shift+F` | Finder |
+| `Super+Shift+N` | Éditeur (Zed) |
+| `Super+Shift+O` | Obsidian |
+| `Super+Shift+W` | Typora |
+| `Super+Shift+D` | lazydocker |
+| `Super+Shift+R` | Recharger la config AeroSpace |
+
+> Dans `aerospace.toml`, les touches portent leur nom **QWERTY** (position physique) : la touche W d'un clavier AZERTY s'appelle `z`, les touches `)` et `-` à droite du 0 s'appellent `minus` et `equal`. Pour un nouveau raccourci, éviter `a`, `z`, `q`, `w` et `m`, qui ne sont pas au même endroit.
 
 ---
 
@@ -355,9 +383,10 @@ Tous les raccourcis : [lazyvim.org/keymaps](https://www.lazyvim.org/keymaps)
 | **btop** | `common/btop` | Config d'Omarchy, touches vim |
 | **topgrade** | `common/topgrade` | Sans images Docker ni mises à jour macOS |
 | **Ghostty** | `macos/ghostty` | Pas de commentaire en fin de ligne dans ce fichier |
+| **AeroSpace** | `macos/aerospace` | Espaces 1 à 9, raccourcis façon Omarchy (`config-version = 2`) |
 | **SketchyBar** | `macos/sketchybar` | Prochain rendez-vous (binaire Swift compilé par `install.sh`), CPU, RAM, réseau, volume, batterie, heure, workspaces AeroSpace |
-| **JankyBorders** | `macos/borders` | Bordure mauve autour de la fenêtre active ; `brew services restart borders` |
-| **Karabiner** | `macos/karabiner` | Règle Hyper à activer dans *Complex Modifications → Add predefined rule* |
+| **JankyBorders** | `macos/borders` | Bordures des fenêtres active et inactives (`bordersrc`), lancé par AeroSpace. Appliquer : `pkill borders; ~/.config/borders/bordersrc &` |
+| **Karabiner** | `macos/karabiner` | Règle Super sur Caps Lock. Après toute modification : *Complex Modifications* → **Remove**, **Add predefined rule**, **Enable** |
 | **Typora** | `macos/typora` | Texte en iA Writer Duo, code en JetBrains Mono |
 | **Obsidian** | — | Police réglée à la main, par coffre : *Apparence → Police* |
 
