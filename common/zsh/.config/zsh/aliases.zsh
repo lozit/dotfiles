@@ -41,3 +41,17 @@ _has claude && alias claude-mem='bun "$(ls -d $HOME/.claude/plugins/cache/thedot
 if [[ $OSTYPE == darwin* ]]; then
   alias flushdns='sudo dscacheutil -flushcache && sudo killall -HUP mDNSResponder'
 fi
+
+# Mettre à jour un plugin Claude Code au niveau du compte ET dans chaque projet qui le déclare
+# Usage : claude-plugin-update-all [plugin@marketplace]   (défaut : groundrules)
+claude-plugin-update-all() {
+  local plugin="${1:-groundrules@claude-code-groundrules}" f dir
+  print -P "%F{blue}→ compte (user)%f"
+  claude plugin update "$plugin" --scope user
+  for f in ~/Projets/*/.claude/settings.json(N); do
+    grep -q "$plugin" "$f" || continue
+    dir="${f:h:h}"
+    print -P "%F{blue}→ ${dir:t}%f"
+    ( builtin cd "$dir" && claude plugin update "$plugin" --scope project )
+  done
+}
