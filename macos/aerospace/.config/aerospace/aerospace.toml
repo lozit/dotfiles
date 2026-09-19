@@ -1,5 +1,7 @@
 # ─────────────────────────────────────────────────────────────
-#  AeroSpace — raccourcis façon Omarchy (Guillaume)
+#  AeroSpace — gestion des ESPACES uniquement (Guillaume)
+#  Pas de mosaïque : toutes les fenêtres sont flottantes (règle en fin de fichier).
+#  Le placement des fenêtres est fait par Tinycast (⌃⌥ + flèches).
 #  Emplacement : ~/.config/aerospace/aerospace.toml
 #  Doc         : https://nikitabobko.github.io/AeroSpace/guide
 #  Recharger   : Super + Maj + R
@@ -28,13 +30,6 @@ exec-on-workspace-change = [
   'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE',
 ]
 
-enable-normalization-flatten-containers = true
-enable-normalization-opposite-orientation-for-nested-containers = true
-
-accordion-padding = 0
-default-root-container-layout = 'tiles'
-default-root-container-orientation = 'auto'
-
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
 # Cmd+Tab vers une app d'un autre espace : afficher l'espace de la fenêtre
@@ -46,14 +41,6 @@ automatically-unhide-macos-hidden-apps = false
 
 [key-mapping]
 preset = 'qwerty'
-
-[gaps]
-inner.horizontal = 6
-inner.vertical   = 6
-outer.left       = 3
-outer.right      = 3
-outer.bottom     = 3
-outer.top        = 5
 
 [mode.main.binding]
 # ── Espaces ──────────────────────────────────────────────────
@@ -92,26 +79,8 @@ cmd-alt-ctrl-down  = 'focus down'
 cmd-alt-ctrl-up    = 'focus up'
 cmd-alt-ctrl-right = 'focus right'
 
-# Super + Maj + flèches : échanger les fenêtres
-cmd-alt-ctrl-shift-left  = 'move left'
-cmd-alt-ctrl-shift-down  = 'move down'
-cmd-alt-ctrl-shift-up    = 'move up'
-cmd-alt-ctrl-shift-right = 'move right'
-
 # Super + W (touche « z » en QWERTY) : fermer la fenêtre
 cmd-alt-ctrl-z = 'close'
-# Super + J : basculer la division horizontale / verticale
-cmd-alt-ctrl-j = 'layout tiles horizontal vertical'
-# Super + L : basculer mosaïque / accordéon
-cmd-alt-ctrl-l = 'layout tiles accordion'
-# Super + T : flottant / mosaïque
-cmd-alt-ctrl-t = 'layout floating tiling'
-# Super + F : plein écran
-cmd-alt-ctrl-f = 'fullscreen'
-
-# Super + ) / Super + - (à droite du 0) : réduire / agrandir
-cmd-alt-ctrl-minus = 'resize smart -50'
-cmd-alt-ctrl-equal = 'resize smart +50'
 
 # ── Applications ─────────────────────────────────────────────
 # Super + Entrée : terminal
@@ -133,12 +102,12 @@ cmd-alt-ctrl-shift-d = 'exec-and-forget open -na Ghostty --args -e /opt/homebrew
 # Super + Maj + R : recharger la config
 cmd-alt-ctrl-shift-r = 'reload-config'
 
-# ── Fenêtres toujours flottantes ─────────────────────────────
-# Identifiant d'une app : aerospace list-apps
+# ── Toutes les fenêtres en flottant ──────────────────────────
+# AeroSpace ne sert qu'à changer d'espace (Super + 0…9) et à y envoyer des
+# fenêtres (Super + Maj + 0…9). Les onglets natifs (Finder, Ghostty) ne posent
+# donc plus de problème.
+# Pour revenir à la mosaïque : supprimer ce bloc et rétablir les réglages
+# default-root-container-layout / [gaps] (voir l'historique git).
 [[on-window-detected]]
-if.app-id = 'com.apple.systempreferences'
-run = 'layout floating'
-
-[[on-window-detected]]
-if.app-id = 'com.apple.calculator'
+if = 'true'          # toutes les fenêtres
 run = 'layout floating'

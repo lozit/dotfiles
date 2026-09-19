@@ -1,3 +1,4 @@
+tap "abue-ammar/tinycast", trusted: true
 tap "data-wise/tap"
 tap "felixkratz/formulae", "https://github.com/FelixKratz/homebrew-formulae", trusted: true
 tap "lozit/tap", trusted: true
@@ -201,8 +202,6 @@ cask "postman"
 cask "protonvpn"
 # Quick Look generator for Markdown files
 cask "qlmarkdown"
-# Control your tools with a few keystrokes
-cask "raycast"
 # Web browser
 cask "safari-technology-preview"
 # Team communication and collaboration software
@@ -223,6 +222,8 @@ cask "t3-code"
 cask "telegram"
 # Music streaming service with high fidelity sound and hi-def video quality
 cask "tidal"
+# Lanceur natif : recherche, raccourcis, presse-papiers (remplace Raycast)
+cask "tinycast"
 # File transfer application
 cask "transmit"
 # Configurable document editor that supports Markdown
