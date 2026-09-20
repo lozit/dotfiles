@@ -37,6 +37,8 @@ if _has zoxide; then
       pwd
     fi
   }
+  # Tab sur « cd » complète les dossiers, comme avec le cd d'origine
+  compdef _cd zd
 fi
 
 alias ....='cd ../../..'
