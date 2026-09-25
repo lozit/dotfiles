@@ -59,6 +59,8 @@ brew "glab"
 brew "goreleaser"
 # Tool for glamorous shell scripts
 brew "gum"
+# Agent multiplexer that lives in your terminal
+brew "herdr"
 # CLI email client written in Rust
 brew "himalaya"
 # Website copier/offline browser
