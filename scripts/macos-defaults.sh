@@ -23,7 +23,7 @@ defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true # « Im
 defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false  # enregistrer sur le disque, pas iCloud
 defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false # pas d'animation à l'ouverture
-defaults write NSGlobalDomain NSWindowShouldDragOnGesture -bool true         # Ctrl+Cmd+glisser déplace une fenêtre (AeroSpace)
+defaults write NSGlobalDomain NSWindowShouldDragOnGesture -bool true         # Ctrl+Cmd+glisser déplace une fenêtre
 defaults write NSGlobalDomain _HIHideMenuBar -bool true                      # barre des menus masquée (SketchyBar)
 
 echo "→ Finder"
@@ -46,8 +46,8 @@ defaults write com.apple.dock autohide -bool true
 defaults write com.apple.dock autohide-delay -float 0           # apparition immédiate
 defaults write com.apple.dock autohide-time-modifier -float 0.3 # animation plus courte
 defaults write com.apple.dock show-recents -bool false          # pas d'apps récentes dans le Dock
-defaults write com.apple.dock mru-spaces -bool false            # ne pas réordonner les Spaces (AeroSpace)
-defaults write com.apple.dock expose-group-apps -bool true      # Mission Control groupé par app (AeroSpace)
+defaults write com.apple.dock mru-spaces -bool false            # ne pas réordonner les Spaces
+defaults write com.apple.dock expose-group-apps -bool true      # Mission Control groupé par app
 
 echo "→ Divers"
 defaults write com.apple.TextEdit RichText -int 0 # TextEdit en texte brut

@@ -37,4 +37,4 @@ Tinycast → Settings → Backup → Export, puis enregistrer le fichier `.tinyc
 | `Ctrl+Option+Entrée` | Plein écran |
 | `Ctrl+Option+C` | Centrer |
 
-Les espaces restent gérés par AeroSpace (`Super+0…9`), voir le README principal.
+Les espaces sont les Spaces natifs de macOS (`Ctrl+1…9`, à activer dans *Réglages → Clavier → Raccourcis → Mission Control*).

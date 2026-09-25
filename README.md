@@ -20,7 +20,7 @@ common/            # partagé entre Mac et Omarchy
   atuin/ bat/ btop/ mise/ nvim/ tmux/ topgrade/
 macos/             # uniquement sur le Mac
   Brewfile         #   paquets Homebrew (non relié par Stow)
-  sketchybar/ borders/ ghostty/ karabiner/ typora/
+  sketchybar/ ghostty/ typora/
 omarchy/           # uniquement sur Omarchy (à remplir)
 scripts/           # scripts ponctuels (non reliés par Stow)
 wallpapers/        # fonds d'écran (non reliés par Stow)
@@ -67,9 +67,9 @@ printf '[user]\n\temail = moi@exemple.fr\n' > ~/.gitconfig.local
 ## Ajouter une config
 
 ```sh
-# ex. AeroSpace sur le Mac
-mkdir -p macos/aerospace/.config/aerospace
-mv ~/.config/aerospace/aerospace.toml macos/aerospace/.config/aerospace/
+# ex. Zed sur le Mac
+mkdir -p macos/zed/.config/zed
+mv ~/.config/zed/settings.json macos/zed/.config/zed/
 ./install.sh
 ```
 
@@ -333,35 +333,10 @@ Tous les raccourcis : [lazyvim.org/keymaps](https://www.lazyvim.org/keymaps)
 
 | Touche | Action |
 |---|---|
-| **Caps Lock maintenu** | **Super** (`Ctrl+Option+Cmd`) ; avec `Shift` : Super+Shift. Voir AeroSpace ci-dessous |
-| Caps Lock appui court | Caps Lock normal (majuscules accentuées É È À) |
+| `Ctrl+1…9` | Aller au Space 1 à 9 (à activer dans *Réglages → Clavier → Raccourcis → Mission Control*) |
 | `Espace` sur un fichier dans le Finder | Aperçu Quick Look (code coloré, Markdown rendu) |
 | `Cmd+Shift+.` dans le Finder | Afficher / masquer les fichiers cachés |
 | `Ctrl+Cmd+glisser` | Déplacer une fenêtre en la saisissant n'importe où |
-
-### AeroSpace (espaces)
-
-**Super** = Caps Lock maintenu (`Ctrl+Option+Cmd`, via Karabiner).
-
-AeroSpace ne gère **que les espaces** : toutes les fenêtres sont flottantes. Pas de mosaïque automatique, donc les onglets natifs du Finder et de Ghostty ne sont plus comptés comme des fenêtres. Le placement des fenêtres est fait par **Tinycast** (`Ctrl+Option` + flèches).
-
-| Raccourci | Action |
-|---|---|
-| `Super+1…9` | Aller à l'espace 1 à 9 |
-| `Super+Shift+1…9` | Envoyer la fenêtre vers l'espace (et la suivre) |
-| `Super+Tab` / `Super+Shift+Tab` | Espace suivant / précédent |
-| `Super+flèches` | Focus sur la fenêtre voisine |
-| `Super+W` | Fermer la fenêtre |
-| `Super+Entrée` | Terminal (Ghostty) |
-| `Super+Shift+Entrée` | Navigateur (Firefox Developer Edition) |
-| `Super+Shift+F` | Finder |
-| `Super+Shift+N` | Éditeur (Zed) |
-| `Super+Shift+O` | Obsidian |
-| `Super+Shift+W` | Typora |
-| `Super+Shift+D` | lazydocker |
-| `Super+Shift+R` | Recharger la config AeroSpace |
-
-> Dans `aerospace.toml`, les touches portent leur nom **QWERTY** (position physique) : la touche W d'un clavier AZERTY s'appelle `z`, les touches `)` et `-` à droite du 0 s'appellent `minus` et `equal`. Pour un nouveau raccourci, éviter `a`, `z`, `q`, `w` et `m`, qui ne sont pas au même endroit.
 
 ---
 
@@ -379,11 +354,8 @@ AeroSpace ne gère **que les espaces** : toutes les fenêtres sont flottantes. P
 | **btop** | `common/btop` | Config d'Omarchy, touches vim |
 | **topgrade** | `common/topgrade` | Sans images Docker ni mises à jour macOS |
 | **Ghostty** | `macos/ghostty` | Pas de commentaire en fin de ligne dans ce fichier |
-| **AeroSpace** | `macos/aerospace` | Espaces 0 à 9 uniquement, toutes les fenêtres flottantes (`config-version = 2`). Revenir à la mosaïque : voir les commentaires en fin de `aerospace.toml` |
 | **Tinycast** | — | Lanceur, presse-papiers, snippets et placement des fenêtres (remplace Raycast). Réglages dans `~/Library/Preferences/com.tinycast.app.plist` : non versionnés, à exporter depuis *Settings → Backup* |
-| **SketchyBar** | `macos/sketchybar` | Prochain rendez-vous (binaire Swift compilé par `install.sh`), CPU, RAM, réseau, volume, batterie, heure, workspaces AeroSpace |
-| **JankyBorders** | `macos/borders` | Bordures des fenêtres active et inactives (`bordersrc`), lancé par AeroSpace. Appliquer : `pkill borders; ~/.config/borders/bordersrc &` |
-| **Karabiner** | `macos/karabiner` | Règle Super sur Caps Lock. Après toute modification : *Complex Modifications* → **Remove**, **Add predefined rule**, **Enable** |
+| **SketchyBar** | `macos/sketchybar` | Prochain rendez-vous (binaire Swift compilé par `install.sh`), CPU, RAM, réseau, volume, batterie, heure |
 | **Typora** | `macos/typora` | Texte en iA Writer Duo, code en JetBrains Mono |
 | **Obsidian** | — | Police réglée à la main, par coffre : *Apparence → Police* |
 
