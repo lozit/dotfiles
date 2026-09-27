@@ -26,3 +26,15 @@ fi
 # pnpm : commandes globales
 export PNPM_HOME="$XDG_DATA_HOME/pnpm"
 path=("$PNPM_HOME/bin" "$PNPM_HOME" $path)
+
+# macOS: ssh-askpass shows the dialog required by AddKeysToAgent confirm.
+# Its brew service does not reliably set SSH_ASKPASS at login, and SIP stops
+# it from restarting the launchd ssh-agent, so do both here when missing.
+# Killing the agent is safe: launchd restarts it on demand with the new env.
+if [[ $OSTYPE == darwin* ]] && [[ -x /opt/homebrew/opt/ssh-askpass/bin/ssh-askpass ]] \
+  && [[ -z $(launchctl getenv SSH_ASKPASS) ]]; then
+  launchctl setenv SSH_ASKPASS /opt/homebrew/opt/ssh-askpass/bin/ssh-askpass
+  launchctl setenv SUDO_ASKPASS /opt/homebrew/opt/ssh-askpass/bin/ssh-askpass
+  launchctl setenv DISPLAY ssh-askpass
+  pkill -u $UID -f '^/usr/bin/ssh-agent -l$'
+fi
