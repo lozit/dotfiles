@@ -218,6 +218,8 @@ cask "syntax-highlight"
 cask "t3-code"
 # Messaging app with a focus on speed and security
 cask "telegram"
+# Menu bar manager
+cask "thaw"
 # Music streaming service with high fidelity sound and hi-def video quality
 cask "tidal"
 # Lanceur natif : recherche, raccourcis, presse-papiers (remplace Raycast)
