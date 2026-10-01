@@ -99,6 +99,8 @@ brew "poppler"
 brew "portaudio"
 # Object-relational database system
 brew "postgresql@17", link: true
+# Rsync for cloud storage
+brew "rclone"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
 # CLI proxy to minimize LLM token consumption
