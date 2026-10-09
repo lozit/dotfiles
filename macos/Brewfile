@@ -2,7 +2,6 @@ tap "abue-ammar/tinycast", trusted: true
 tap "data-wise/tap"
 tap "felixkratz/formulae", "https://github.com/FelixKratz/homebrew-formulae", trusted: true
 tap "lozit/tap", trusted: true
-tap "theseal/ssh-askpass", trusted: true
 # Simple, modern, secure file encryption
 brew "age"
 # Codec library for encoding and decoding AV1 video streams
@@ -139,8 +138,6 @@ brew "zsh-completions"
 brew "data-wise/tap/himalaya-mcp", trusted: true
 # Custom macOS statusbar with shell plugin, interaction and graph support
 brew "felixkratz/formulae/sketchybar"
-# Passphrase dialog for use with OpenSSH in macOS
-brew "theseal/ssh-askpass/ssh-askpass", trusted: true
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
 # Command-line interface for 1Password
