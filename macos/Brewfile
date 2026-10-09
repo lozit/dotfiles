@@ -152,6 +152,8 @@ cask "claude"
 cask "cleanmymac"
 # Screen capturing tool
 cask "cleanshot"
+# OpenAI's coding agent that runs in your terminal
+cask "codex"
 # AI-powered translator
 cask "deepl"
 # Voice and text chat software
