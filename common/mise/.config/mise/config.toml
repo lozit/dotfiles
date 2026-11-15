@@ -1,5 +1,21 @@
 [tools]
 node = "lts"
+# Global CLIs, declared here instead of `npm i -g`: global npm packages live
+# inside one Node version and vanish when "lts" moves to a new release
+pnpm = "latest"
+# @netlify/serverless-functions-api 2.x dropped the provenance 1.3.0 had
+# (same publisher, netlify-bot); excluded after review on 2026-11-15,
+# remove once republished with provenance
+"npm:netlify-cli" = { version = "latest", trust_policy_excludes = [
+  "@netlify/serverless-functions-api@2.24.0",
+  "@netlify/serverless-functions-api@2.30.0",
+] }
+"npm:codeburn" = "latest"
+# Low weekly downloads: approved explicitly (allow_low_downloads)
+"npm:mcp-standardnotes" = { version = "latest", allow_low_downloads = true }
+"npm:@salesforce/cli" = "latest"
+"npm:@higgsfield/cli" = "latest"
+"npm:@agentskill.sh/cli" = { version = "latest", allow_low_downloads = true }
 # Apple Photos library export and query (not in Homebrew; macOS only)
 "pipx:osxphotos" = { version = "latest", os = ["macos"] }
 

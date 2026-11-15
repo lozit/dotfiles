@@ -348,7 +348,7 @@ Tous les raccourcis : [lazyvim.org/keymaps](https://www.lazyvim.org/keymaps)
 | **Starship** | `common/starship` | Dossier, branche et état Git, versions des langages, durée des commandes > 2 s |
 | **Git + delta** | `common/git` | Adresse e-mail dans `~/.gitconfig.local` |
 | **atuin** | `common/atuin` | Synchro chiffrée possible entre machines : `atuin register` / `atuin login` |
-| **mise** | `common/mise` | Remplace nvm et rbenv ; lit `.nvmrc` et `.ruby-version`. Installe aussi les outils absents de Homebrew, comme `osxphotos` (macOS seulement) |
+| **mise** | `common/mise` | Remplace nvm et rbenv ; lit `.nvmrc` et `.ruby-version`. Installe aussi les CLI npm globales (pnpm, netlify, sf…), qui survivent ainsi aux mises à jour de Node, et les outils absents de Homebrew comme `osxphotos` (macOS seulement). Ne plus utiliser `npm i -g` : ajouter l'outil dans `config.toml` |
 | **Neovim** | `common/nvim` | LazyVim + Catppuccin, comme sur Omarchy |
 | **tmux** | `common/tmux` | Config d'Omarchy, couleurs Catppuccin |
 | **btop** | `common/btop` | Config d'Omarchy, touches vim |
