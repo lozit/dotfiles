@@ -1,5 +1,7 @@
 [tools]
 node = "lts"
+# Apple Photos library export and query (not in Homebrew; macOS only)
+"pipx:osxphotos" = { version = "latest", os = ["macos"] }
 
 [settings]
 idiomatic_version_file_enable_tools = ["node", "ruby"]
